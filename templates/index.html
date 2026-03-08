@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Rock Paper Scissors</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🎮 Rock Paper Scissors</h1>
+<p class="subtitle">Challenge the Computer</p>
+
+<div class="buttons">
+
+<form method="POST">
+<button class="game-btn rock" name="choice" value="rock">
+🪨
+<span>Rock</span>
+</button>
+
+<button class="game-btn paper" name="choice" value="paper">
+📄
+<span>Paper</span>
+</button>
+
+<button class="game-btn scissors" name="choice" value="scissors">
+✂️
+<span>Scissors</span>
+</button>
+</form>
+
+</div>
+
+{% if user_choice %}
+
+<div class="result-card">
+
+<h2>Your Move</h2>
+<p class="choice">{{ user_choice }}</p>
+
+<h2>Computer Move</h2>
+<p class="choice">{{ computer_choice }}</p>
+
+<h2 class="result">{{ result }}</h2>
+
+<div class="score">
+<h3>Score</h3>
+<p>You: {{ user_score }} | Computer: {{ computer_score }}</p>
+</div>
+
+</div>
+
+{% endif %}
+
+</div>
+
+</body>
+</html>
